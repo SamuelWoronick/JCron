@@ -21,9 +21,6 @@ public class CronJob implements Comparable<CronJob> {
 		// Run the job.
 		process.instantiate();
 		
-		// Print the running job.
-		System.out.println(runDate + " " + this);
-		
 		// Schedule the next run.
 		runDate = schedule.nextRunDate();
 	}

@@ -2,18 +2,22 @@ package cron_job;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import cron_tab.Entry;
 
 public class Process {
 	private ProcessBuilder processBuilder;
+	// This is the representation of the command that ProcessBuilder needs.
 	private ArrayList<String> command;
+	// This is the pretty representation of the command.
+	private String prettyCommand;
 	
 	public Process(Entry entry) {
 		// Increment by one to include the job itself.
 		int numEntires = entry.getArguments().length + 1;
 		
-		// This is defined as ProcessBuilder defines it internally.
+		// This is defined how ProcessBuilder defines it internally.
 		command = new ArrayList<String>(numEntires);
 		// Populate the ArrayList.
 		command.add(entry.getJob());
@@ -26,11 +30,12 @@ public class Process {
 	}
 	
 	public void instantiate() {
-		// This method can be reused.
-		
 		try {
 			// Instantiate the process.
 			processBuilder.start();
+			
+			// Print a notification with the date the job was run.
+			System.out.println(new Date() + "\t" + toString());
 		} catch(IOException e) {
 			throw new RuntimeException("JCron: \"" +  this + "\" has failed: " + e.toString());
 		}
@@ -38,6 +43,27 @@ public class Process {
 
 	@Override
 	public String toString() {
-		return command.toString();
+		// If the pretty representation has already been generated, return it.
+		if(prettyCommand == null) {
+			StringBuilder strBuilder = new StringBuilder();
+			
+			// The first element is the job, so if it is not defined, throw an exception.
+			if(command.size() == 0) {
+				throw new RuntimeException("JCron: Job not defined.");
+			} else {
+				strBuilder.append(command.get(0));
+			}
+			
+			// The remaining elements, if there are any, are arguments.
+			for(int i = 1; i < command.size(); i++) {
+				strBuilder.append(" ");
+				strBuilder.append(command.get(i));
+			}
+			
+			// Return the result.
+			return prettyCommand = strBuilder.toString();
+		} else {
+			return prettyCommand;
+		}
 	}
 }

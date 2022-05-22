@@ -7,12 +7,14 @@ import cron_tab.CronTab;
 
 public class Cron {
 	public static void main(String[] args) {
-		if (args.length != 1) {
-			throw new RuntimeException("JCron requires one argument, the absolute path to the cron table.");
-		}
+//		if (args.length != 1) {
+//			throw new RuntimeException("JCron requires one argument, the absolute path to the cron table.");
+//		}
+//		
+//		// This is the absolute path to the cron table.
+//		String absPath = args[0];
 		
-		// This is the absolute path to the cron table.
-		String absPath = args[0];
+		String absPath = "example/crontab.txt";
 		
 		
 		// Get cron jobs from the cron table.

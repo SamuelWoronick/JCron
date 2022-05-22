@@ -4,8 +4,10 @@ import java.util.Arrays;
 
 import com.google.gson.Gson;
 
-import main.CronJob;
+import cron_job.CronJob;
+import cron_job.Process;
 import schedule.InitSchedule;
+import schedule.Schedule;
 import utils.Utils;
 
 public class CronTab {
@@ -21,16 +23,21 @@ public class CronTab {
 	
 	public CronJob[] getCronJobs() {
 		CronJob[] cronJobs = new CronJob[entries.length];
+		/* Each entry corresponds to one job.
+		 * Since some jobs run immediately upon cron initialization,
+		 * the array of recurring jobs will be no longer than the number of entries.
+		 */
 		
 		int index = 0;
 		for(Entry entry : entries) {
-			CronJob cronJob = new CronJob(entry);
+			Schedule schedule = entry.getSchedule();
+			Process process = new Process(entry);
 			
 			// If the cron job is defined to run upon initialization, do it now.
-			if(entry.getSchedule() instanceof InitSchedule) {
-				cronJob.run();
+			if(schedule instanceof InitSchedule) {
+				process.instantiate();
 			} else {
-				cronJobs[index++] = cronJob;
+				cronJobs[index++] = new CronJob(process, schedule);
 			}
 		}
 		

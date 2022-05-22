@@ -1,4 +1,4 @@
-# This is an example of a valid cron table.
+# This is an example of a valid cron table, formatted in JSON.
 # There are currently three schedule modes.
 # 1) A job can run immediately upon cron initialization (e.g., "schedule":"init").
 # 2) A job can run at a certain frequency in minutes (e.g., "schedule":"5").
@@ -6,18 +6,23 @@
 
 [
    {
-      "job":"/scripts/cron-scripts/restore.sh",
-      "arguments":"",
-      "schedule":"init"
+      "job": "/scripts/restore.sh",
+      "arguments": [""],
+      "schedule": "init"
    },
    {
-      "job":"/scripts/cron-scripts/backup.sh",
-      "arguments":"",
-      "schedule":"5"
+      "job": "/scripts/backup.sh",
+      "arguments": [""],
+      "schedule": "5"
    },
    {
-      "job":"/scripts/cron-scripts/restart.sh",
-      "arguments":"'The server will restart in one minute.'",
-      "schedule":"17:30"
+      "job": "/scripts/restart.sh",
+      "arguments": ["The server will restart in one minute."],
+      "schedule": "23:59"
+   },
+   {
+      "job": "/usr/bin/docker",
+      "arguments": ["run", "--rm", "name:tag"],
+      "schedule": ""
    }
 ]

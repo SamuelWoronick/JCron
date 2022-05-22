@@ -13,12 +13,12 @@ public class FrequencySchedule implements Schedule {
 			// Define the schedule.
 			frequency = Utils.toMillis(Integer.valueOf(schedule));
 		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("JCron: Illegal schedule: \"" + schedule + "\"");
+			Schedule.throwIllegalScheduleError(schedule);
 		}
 
 		// Check whether the schedule is valid.
 		if (frequency < 1) {
-			throw new IllegalArgumentException("JCron: Illegal schedule: \"" + schedule + "\"");
+			Schedule.throwIllegalScheduleError(schedule);
 		}
 	}
 

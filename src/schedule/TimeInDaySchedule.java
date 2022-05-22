@@ -18,13 +18,13 @@ public class TimeInDaySchedule implements Schedule {
 			timeInDay[0] = Integer.valueOf(temp[0]);
 			timeInDay[1] = Integer.valueOf(temp[1]);
 		} catch (NumberFormatException e) {
-			throw new IllegalArgumentException("JCron: Illegal schedule: \"" + schedule + "\"");
+			Schedule.throwIllegalScheduleError(schedule);
 		}
 
 		// Check whether the schedule is valid.
 		for (Integer timeUnit : timeInDay) {
 			if (timeUnit < 0) {
-				throw new IllegalArgumentException("JCron: Illegal schedule: \"" + schedule + "\"");
+				Schedule.throwIllegalScheduleError(schedule);
 			}
 		}
 	}

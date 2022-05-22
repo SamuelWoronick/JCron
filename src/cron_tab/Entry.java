@@ -7,19 +7,19 @@ import schedule.TimeInDaySchedule;
 
 public class Entry {
 	private String job;
-	private String arguments;
+	private String[] arguments;
 	private String schedule;
 	
 	public String getJob() {
 		return job;
 	}
-	public String getArguments() {
+	public String[] getArguments() {
 		return arguments;
 	}
 	public Schedule getSchedule() {
 		// If schedule is not defined, throw an exception.
 		if(schedule == null || schedule.length() == 0) {
-			throw new IllegalArgumentException("JCron: The schedule for \"" + this + "\" must be defined.");
+			Schedule.throwUndefinedScheduleError();
 		}
 		
 		// INIT Mode
@@ -34,10 +34,5 @@ public class Entry {
 		
 		// FREQUENCY Mode
 		return new FrequencySchedule(schedule);
-	}
-	
-	@Override
-	public String toString() {
-		return job + (arguments == null ? "" : " " + arguments);
 	}
 }

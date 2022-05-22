@@ -50,5 +50,4 @@ public class TimeInDaySchedule implements Schedule {
 		}
 
 	}
-
 }

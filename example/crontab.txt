@@ -1,4 +1,8 @@
 # This is an example of a valid cron table.
+# There are currently three schedule modes.
+# 1) A job can run immediately upon cron initialization (e.g., "schedule":"init").
+# 2) A job can run at a certain frequency in minutes (e.g., "schedule":"5").
+# 3) A job can run at a certain time in the day (e.g., "schedule":"17:30").
 
 [
    {

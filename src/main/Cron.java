@@ -13,7 +13,7 @@ public class Cron {
 		// This is the absolute path to the cron table.
 		String absPath = args[0];
 		
-		// Get cron jobs.
+		// Get cron jobs from the cron table.
 		CronJob[] cronJobs = new CronTab(absPath).getCronJobs();
 		
 		// Sort the list such that the nearest run dates are first.

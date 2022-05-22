@@ -23,6 +23,6 @@
    {
       "job": "/usr/bin/docker",
       "arguments": ["run", "--rm", "name:tag"],
-      "schedule": ""
+      "schedule": "60"
    }
 ]

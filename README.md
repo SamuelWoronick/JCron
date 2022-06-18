@@ -7,7 +7,7 @@ JCron is a simple and efficient cron implemented in Java.
 ## Motivation
 I needed a process to perform orchestration within containers.
 
-The native cron utility made for an easy solution, but I did not like that it was privileged, especially when privileges were not required, so I created JCron. (I tend to reserve user namespace swapping for the processes that absolutely require it.)
+The native cron utility made for an easy solution, but I did not like that it was privileged, especially when privileges were not required, so I created JCron. (I tend to reserve user namespace mapping for the processes that absolutely require it.)
 
 <br>
 

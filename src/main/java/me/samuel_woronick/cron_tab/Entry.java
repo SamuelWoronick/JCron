@@ -1,9 +1,9 @@
-package cron_tab;
+package me.samuel_woronick.cron_tab;
 
-import schedule.FrequencySchedule;
-import schedule.InitSchedule;
-import schedule.Schedule;
-import schedule.TimeInDaySchedule;
+import me.samuel_woronick.schedule.FrequencySchedule;
+import me.samuel_woronick.schedule.InitSchedule;
+import me.samuel_woronick.schedule.Schedule;
+import me.samuel_woronick.schedule.TimeInDaySchedule;
 
 public class Entry {
 	private String job;

@@ -1,8 +1,8 @@
-package cron_job;
+package me.samuel_woronick.cron_job;
 
 import java.util.Date;
 
-import schedule.Schedule;
+import me.samuel_woronick.schedule.Schedule;
 
 public class CronJob implements Comparable<CronJob> {
 	private final Process process;

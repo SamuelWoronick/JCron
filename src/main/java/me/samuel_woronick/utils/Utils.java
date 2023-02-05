@@ -1,4 +1,4 @@
-package utils;
+package me.samuel_woronick.utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

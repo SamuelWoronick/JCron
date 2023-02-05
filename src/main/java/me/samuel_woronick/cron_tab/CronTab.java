@@ -1,14 +1,14 @@
-package cron_tab;
+package me.samuel_woronick.cron_tab;
 
 import java.util.Arrays;
 
 import com.google.gson.Gson;
 
-import cron_job.CronJob;
-import cron_job.Process;
-import schedule.InitSchedule;
-import schedule.Schedule;
-import utils.Utils;
+import me.samuel_woronick.cron_job.CronJob;
+import me.samuel_woronick.cron_job.Process;
+import me.samuel_woronick.schedule.InitSchedule;
+import me.samuel_woronick.schedule.Schedule;
+import me.samuel_woronick.utils.Utils;
 
 public class CronTab {
 	private final Entry[] entries;

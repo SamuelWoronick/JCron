@@ -1,11 +1,11 @@
-package cron_job;
+package me.samuel_woronick.cron_job;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import cron_tab.Entry;
+import me.samuel_woronick.cron_tab.Entry;
 
 public class Process {
 	private final ProcessBuilder processBuilder;

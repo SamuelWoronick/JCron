@@ -1,9 +1,9 @@
-package schedule;
+package me.samuel_woronick.schedule;
 
 import java.util.Calendar;
 import java.util.Date;
 
-import utils.Utils;
+import me.samuel_woronick.utils.Utils;
 
 public class TimeInDaySchedule implements Schedule {
 	// TIME_IN_DAY Mode

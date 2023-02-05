@@ -1,8 +1,8 @@
-package schedule;
+package me.samuel_woronick.schedule;
 
 import java.util.Date;
 
-import utils.Utils;
+import me.samuel_woronick.utils.Utils;
 
 public class FrequencySchedule implements Schedule {
 	// FREQUENCY Mode

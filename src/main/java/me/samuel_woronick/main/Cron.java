@@ -1,9 +1,9 @@
-package main;
+package me.samuel_woronick.main;
 
 import java.util.Arrays;
 
-import cron_job.CronJob;
-import cron_tab.CronTab;
+import me.samuel_woronick.cron_job.CronJob;
+import me.samuel_woronick.cron_tab.CronTab;
 
 public class Cron {
 	public static void main(String[] args) {

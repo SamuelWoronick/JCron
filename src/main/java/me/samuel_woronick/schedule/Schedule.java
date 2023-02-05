@@ -1,4 +1,4 @@
-package schedule;
+package me.samuel_woronick.schedule;
 
 import java.util.Date;
 
